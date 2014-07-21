@@ -8,12 +8,13 @@ import com.taylak.oyuntest.MyGdxGame;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
-	protected void onCreate (Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		config.useAccelerometer=false;
-		config.useCompass=false;
-		config.useGL20=true;
+//		config.useAccelerometer = false;
+//		config.useCompass = false;
+//		config.useWakelock = false;
+ 
 		initialize(new MyGdxGame(), config);
 	}
 }
