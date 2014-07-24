@@ -27,7 +27,7 @@ public class MainMenu extends BlankScreen implements GestureListener {
 	static final int BOX_POSITION_ITERATIONS = 2;
 	static final float WORLD_TO_BOX = 0.02f;
 	static final float BOX_WORLD_TO = 50f;
-	private boolean showDebug = false;
+	private boolean showDebug = true;
 
 	protected Skin skin = new Skin(Gdx.files.internal("uiskin.json"));
 	protected float BUTTON_WIDTH = Gdx.app.getGraphics().getWidth() / 7;
@@ -84,7 +84,9 @@ public class MainMenu extends BlankScreen implements GestureListener {
 
 		stageui.act(delta);
 		stageui.draw();
-
+		if (showDebug)
+			debugRenderer.render(world, cam.combined);
+		
 		renderText();
 		world.step(delta, BOX_VELOCITY_ITERATIONS, BOX_POSITION_ITERATIONS);
 	}
