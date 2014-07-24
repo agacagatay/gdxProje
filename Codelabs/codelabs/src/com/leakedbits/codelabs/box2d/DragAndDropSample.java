@@ -56,7 +56,7 @@ public class DragAndDropSample extends Sample {
 		debugRenderer.render(world, camera.combined);
 
 		/* Step the simulation with a fixed time step of 1/60 of a second */
-		/*world.step(1 / 60f, 6, 2);*/
+		world.step(1 / 60f, 6, 2);
 	}
 
 	@Override

@@ -52,6 +52,9 @@ public class MainMenu implements Screen {
 		stage.setViewport(Codelabs.TARGET_WIDTH, Codelabs.TARGET_WIDTH
 				* (Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth()));
 		
+		
+
+		
 		Gdx.input.setInputProcessor(stage);
 
 		atlas = new TextureAtlas("data/ui/atlas.pack");
@@ -60,7 +63,7 @@ public class MainMenu implements Screen {
 
 		table = new Table(skin);
 		table.setFillParent(true);
-		table.defaults().uniformX().pad(3);
+		table.defaults().uniformX().pad(5);
 
 		List<TextButton> textButtons = new ArrayList<TextButton>();
 

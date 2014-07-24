@@ -17,6 +17,7 @@ public class BouncingBallSample extends Sample {
 	/* Use Box2DDebugRenderer, which is a model renderer for debug purposes */
 	private Box2DDebugRenderer debugRenderer;
 
+	
 	/* As always, we need a camera to be able to see the objects */
 	private OrthographicCamera camera;
 
@@ -75,7 +76,7 @@ public class BouncingBallSample extends Sample {
 
 		/* Create the ball */
 		Shape shape = Box2DFactory.createCircleShape(0.5f);
-		FixtureDef fixtureDef = Box2DFactory.createFixture(shape, 2.5f, 0.25f, 0.75f, false);
+		FixtureDef fixtureDef = Box2DFactory.createFixture(shape, 2.5f, 0.25f, 0.8f, false);
 		Box2DFactory.createBody(world, BodyType.DynamicBody, fixtureDef, new Vector2(7, 5));
 		
 		/* Create the ramp */
