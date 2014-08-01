@@ -70,6 +70,7 @@ public class BouncingBallSample extends Sample {
 		 * must be defined also in meters. We set a desired width and adjust
 		 * height to different resolutions.
 		 */
+		
 		camera = new OrthographicCamera(20,
 				20 * (Gdx.graphics.getHeight() / (float) Gdx.graphics
 						.getWidth()));

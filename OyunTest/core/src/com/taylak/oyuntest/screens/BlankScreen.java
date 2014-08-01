@@ -32,14 +32,22 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 
 	public BlankScreen() {
 		super();
+		nesneleriOrnekle();
+	}
+
+	public void nesneleriOrnekle() {
 		batch = new SpriteBatch();
 		batchui = new SpriteBatch();
-		stage = new Stage();
-		stageui = new Stage();
+		stage = new Stage( );
+		stageui = new Stage( );
 		width = Gdx.graphics.getWidth();
 		height = Gdx.graphics.getHeight();
-		cam = new OrthographicCamera();
-		cam.setToOrtho(false, width, height);
+
+		 cam = new OrthographicCamera(width, height);
+		// cam.setToOrtho(false, width/2, height/2);
+		// cam.update();
+
+		//debugRenderer = new Box2DDebugRenderer();
 		// stage.setViewport(new StretchViewport(width, height));
 		InputMultiplexer im = new InputMultiplexer(stageui, stage);
 		Gdx.input.setInputProcessor(im);
@@ -58,8 +66,8 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 		cam.update();
 		batch.setProjectionMatrix(cam.combined);
 
-		stage.setViewport(new ExtendViewport(width, height));
-		stageui.setViewport(new ExtendViewport(width, height));
+		stage.setViewport(new StretchViewport(width, height));
+		stageui.setViewport(new StretchViewport(width, height));
 	}
 
 	@Override
@@ -136,6 +144,7 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 		stageui.dispose();
 		batch.dispose();
 		batchui.dispose();
+		//debugRenderer.dispose();
 	}
 
 	protected void addCameraControl(float x1, float x2, float y1, float y2) {
