@@ -24,7 +24,7 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 	protected float width;
 	protected float height;
 
-	protected CameraController controller;
+	protected CameraController2 controller;
 	protected GestureDetector gestureDetector;
 
 	public World world;
@@ -38,16 +38,16 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 	public void nesneleriOrnekle() {
 		batch = new SpriteBatch();
 		batchui = new SpriteBatch();
-		stage = new Stage( );
-		stageui = new Stage( );
+		stage = new Stage();
+		stageui = new Stage();
 		width = Gdx.graphics.getWidth();
 		height = Gdx.graphics.getHeight();
 
-		 cam = new OrthographicCamera(width, height);
+		cam = new OrthographicCamera(width, height);
 		// cam.setToOrtho(false, width/2, height/2);
 		// cam.update();
 
-		//debugRenderer = new Box2DDebugRenderer();
+		// debugRenderer = new Box2DDebugRenderer();
 		// stage.setViewport(new StretchViewport(width, height));
 		InputMultiplexer im = new InputMultiplexer(stageui, stage);
 		Gdx.input.setInputProcessor(im);
@@ -144,11 +144,11 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 		stageui.dispose();
 		batch.dispose();
 		batchui.dispose();
-		//debugRenderer.dispose();
+		// debugRenderer.dispose();
 	}
 
 	protected void addCameraControl(float x1, float x2, float y1, float y2) {
-		controller = new CameraController();
+		controller = new CameraController2();
 		controller.setBounds(x1, x2, y1, y2);
 		gestureDetector = new GestureDetector(20, 0.5f, 0.8f, 0.15f, controller);
 
@@ -158,7 +158,7 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 
 	}
 
-	protected class CameraController implements GestureListener {
+	protected class CameraController2 implements GestureListener {
 		public float velX, velY;
 		boolean flinging = false;
 		float initialScale = 1;
@@ -166,7 +166,7 @@ public abstract class BlankScreen implements Screen, InputProcessor {
 		float boundX = width * cam.zoom / 2, boundX2 = 0, boundY = 0,
 				boundY2 = height;
 
-		public CameraController() {
+		public CameraController2() {
 			// TODO Auto-generated constructor stub
 		}
 

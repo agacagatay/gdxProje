@@ -69,7 +69,8 @@ public class TestScreen1 implements Screen {
 	public void render(float delta) {
 		// TODO Auto-generated method stub
 		Gdx.gl.glClearColor(1f, 1f, 1f, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+	 	Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+	 
 		stage.act(delta);
 		stage.draw();
 	}
