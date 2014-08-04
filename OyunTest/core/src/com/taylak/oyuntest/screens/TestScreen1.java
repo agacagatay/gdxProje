@@ -20,10 +20,8 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 public class TestScreen1 implements Screen {
 	// private SpriteBatch batch;
 	// private Texture texture;
-	// private Sprite sprite; cscs
-  
-	
-	
+	// private Sprite sprite; 
+   
 	private Stage stage;
 	OrthographicCamera cam = new OrthographicCamera();
 	ShapeRenderer debugRenderer = new ShapeRenderer();
