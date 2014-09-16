@@ -15,6 +15,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 
 public class WorldRenderer {
 
@@ -66,7 +67,7 @@ public class WorldRenderer {
 
 	public WorldRenderer(World world, boolean debug) {
 		this.world = world;
-		this.cam = new OrthographicCamera(CAMERA_WIDTH*2, CAMERA_HEIGHT*2);
+		this.cam = new OrthographicCamera(CAMERA_WIDTH * 2, CAMERA_HEIGHT * 2);
 		this.cam.position.set(world.getBob().getPosition().x, world.getBob()
 				.getPosition().y, 0);
 		// this.cam.position.set(CAMERA_WIDTH / 2f, CAMERA_HEIGHT / 2f, 0);
@@ -110,6 +111,7 @@ public class WorldRenderer {
 
 		this.cam.position.set(world.getBob().getPosition().x, world.getBob()
 				.getPosition().y, 0);
+
 		cam.update();
 
 		spriteBatch.setProjectionMatrix(cam.combined);
